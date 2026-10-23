@@ -1,30 +1,152 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LavaWater SMP | Minecraft Survival</title>
-<style>
-:root{--site-primary:#45d483;--site-secondary:#183d32;--site-background:#07120f;--site-on-primary:#062013;--site-on-secondary:#f0fff6;--site-on-background:#f3fff7;--site-font-body:Arial,Helvetica,sans-serif;--site-font-heading:Impact,'Arial Narrow',sans-serif;--site-heading-scale:1;--site-spacing-scale:1;--site-radius-scale:1;--site-decoration-opacity:1;--surface:#10211b;--muted:#a9c3b4;--line:#284538}
-*{box-sizing:border-box}body{margin:0;font-family:var(--site-font-body);background:var(--site-background);color:var(--site-on-background)}#app{min-height:100vh;background-color:var(--site-background);background-image:linear-gradient(90deg,rgba(3,12,9,.84),rgba(3,12,9,.53)),linear-gradient(180deg,rgba(3,12,9,.30),rgba(3,12,9,.78)),url('https://dotesports.com/wp-content/uploads/2023/06/cherry-blossom-grove-in-minecraft.png');background-size:cover;background-position:center;background-attachment:fixed}.wrap{width:min(1050px,92%);margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px}.logo{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--site-primary);color:#092014;font-size:23px}.brand span{color:var(--site-primary)}.slide{display:none;min-height:calc(100vh - 105px);padding:55px 0 45px;animation:appear .35s ease}.slide.active{display:flex;flex-direction:column;justify-content:center}.eyebrow{color:var(--site-primary);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}.hero h1{font-family:var(--site-font-heading);font-size:clamp(58px,8vw,100px);line-height:.92;letter-spacing:1px;margin:18px 0}.hero h1 em{font-style:normal;color:var(--site-primary)}.lead{max-width:540px;color:var(--muted);font-size:17px;line-height:1.8}.actions,.socials,.slide-controls{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{cursor:pointer;border:1px solid var(--line);border-radius:9px;padding:14px 20px;font:inherit;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:transform .2s,background .2s;text-decoration:none}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--site-primary);color:var(--site-on-primary);border-color:var(--site-primary)}.btn-secondary{background:#12271e;color:#fff}.art{position:relative;min-height:320px;display:grid;place-items:center}.glow{position:absolute;width:220px;height:220px;background:#43d681;opacity:.13;border-radius:50%;filter:blur(2px)}.blocks{position:relative;width:340px;height:270px;max-width:100%}.block{position:absolute;width:112px;height:112px;transform:rotate(30deg) skew(-7deg,-7deg);border:3px solid #081710;box-shadow:12px 18px 0 #030a07aa}.grass{background:linear-gradient(135deg,#75e65e 0 28%,#278647 28% 45%,#704c2d 45% 100%);left:115px;top:55px}.water{background:repeating-linear-gradient(0deg,#1687a8 0 15px,#43d5e9 15px 20px);left:30px;top:130px}.stone{background:repeating-linear-gradient(135deg,#737e7b 0 20px,#4e5955 20px 24px);left:205px;top:140px}.pixel-label{font-size:12px;letter-spacing:2px;color:var(--site-primary);font-weight:800;margin-top:24px}.panel{border:1px solid rgba(140,210,168,.35);border-radius:16px;background:rgba(7,22,15,.88);backdrop-filter:blur(7px);padding:clamp(22px,4vw,42px);text-align:center}.panel h2{font-family:var(--site-font-heading);font-size:clamp(38px,5vw,58px);margin:12px 0}.panel>p{color:var(--muted);line-height:1.7;max-width:650px;margin:0 auto}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:30px 0}.card{background:rgba(16,33,27,.92);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:left}.card .emoji{font-size:27px}.card h3{margin:14px 0 8px}.card p{color:var(--muted);line-height:1.7;font-size:14px}.ipbox{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}.ip{font-family:monospace;font-size:clamp(20px,4vw,29px);font-weight:900;letter-spacing:1px;background:#07120f;border:1px dashed #45d48388;border-radius:9px;padding:15px 20px;color:var(--site-primary)}.owners{color:var(--muted);margin-top:20px}.owners strong{color:#fff}.slide-controls{justify-content:space-between;align-items:center;margin-top:28px}.dots{color:#f0fff6;font-size:13px;text-shadow:0 1px 4px #000}.footer{border-top:1px solid rgba(180,220,195,.25);padding:20px 0 28px;color:#e0eee5;font-size:13px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;text-shadow:0 1px 3px #000}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:760px){.slide{padding:30px 0}.hero-grid{grid-template-columns:1fr;gap:0}.art{min-height:240px}.blocks{transform:scale(.82)}.cards{grid-template-columns:1fr}.card{padding:18px}.topbar{padding:18px 0}.slide-controls .btn{padding:12px 15px}}
-@media(prefers-reduced-motion:reduce){.slide{animation:none}.btn{transition:none}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LavaWater SMP | Minecraft Survival</title>
+  <meta name="description" content="Join LavaWater SMP and start your Minecraft survival adventure!">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: #07150f;
+      text-align: center;
+    }
+
+    header {
+      padding: 22px;
+      background: #10281b;
+      border-bottom: 2px solid #42e477;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header span { color: #42e477; }
+
+    main {
+      min-height: 75vh;
+      padding: 70px 20px;
+      background: radial-gradient(ellipse at top, #205536, #07150f 70%);
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      margin: 20px 0;
+    }
+
+    h1 span { color: #42e477; }
+
+    p {
+      color: #c5d9cb;
+      line-height: 1.8;
+    }
+
+    .ip {
+      margin: 28px auto;
+      padding: 18px;
+      max-width: 360px;
+      border: 2px dashed #42e477;
+      border-radius: 12px;
+      font-size: 23px;
+      font-weight: bold;
+      color: #42e477;
+      overflow-wrap: anywhere;
+    }
+
+    button {
+      padding: 15px 25px;
+      border: 0;
+      border-radius: 8px;
+      background: #42e477;
+      color: #07150f;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover { background: #8affad; }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px auto;
+    }
+
+    .feature {
+      width: 220px;
+      padding: 20px;
+      background: #10281b;
+      border: 1px solid #28583a;
+      border-radius: 12px;
+    }
+
+    footer {
+      padding: 25px;
+      color: #a9c3b2;
+      background: #050d08;
+    }
+  </style>
 </head>
+
 <body>
-<main id="app"><div class="wrap">
-<header class="topbar"><div class="brand"><div class="logo">LW</div><div>LAVA<span>WATER</span><div style="font-size:10px;letter-spacing:3px;color:#a9c3b4;margin-top:3px">SURVIVAL SMP</div></div></div><div class="eyebrow">MINECRAFT SURVIVAL</div></header>
-<section class="slide active" id="slide1" aria-label="Welcome slide"><div class="hero-grid"><div class="hero"><div class="eyebrow">✦ Your next adventure starts here</div><h1>BUILD. GRIND.<br><em>SURVIVE.</em></h1><p class="lead">Welcome to LavaWater SMP. Explore, gather resources, build your base, and make your own story in our survival world.</p><div class="actions"><button class="btn btn-primary" type="button" data-next>⛏ EXPLORE THE SERVER →</button></div><p class="pixel-label">GRIND • BUILD • SURVIVE • PLAY TOGETHER</p></div><div class="art" aria-hidden="true"><div class="glow"></div><div class="blocks"><div class="block grass"></div><div class="block water"></div><div class="block stone"></div></div></div></div><div class="slide-controls"><span class="dots">01 / 02 · WELCOME</span><button class="btn btn-secondary" type="button" data-next>Next slide →</button></div></section>
-<section class="slide" id="slide2" aria-label="Server details slide"><div class="panel"><div class="eyebrow">Everything starts here</div><h2>JOIN LAVAWATER SMP</h2><p>Start your survival adventure, build your legacy, and play alongside the community.</p><div class="cards"><article class="card"><div class="emoji">🌲</div><h3>Survival & Grind</h3><p>Collect resources, explore the world, and work toward your next big goal.</p></article><article class="card"><div class="emoji">🏡</div><h3>Build Your Legacy</h3><p>Create your dream base and make a place of your own.</p></article><article class="card"><div class="emoji">🤝</div><h3>Meet the Community</h3><p>Bring your friends and make memorable moments together.</p></article></div><div class="eyebrow">Your server address</div><div class="ipbox"><div class="ip" id="serverIp">lavawater.mcsh.io</div><button class="btn btn-primary" id="copyIp" type="button">▣ COPY IP</button></div><div class="socials"><a class="btn btn-secondary" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">▶ YouTube</a><a class="btn btn-secondary" href="https://discord.com/" target="_blank" rel="noopener noreferrer">☁ Discord Server</a></div><div class="owners">Owned by <strong>ItsLava</strong> &amp; <strong>BlueOceanWater</strong></div><p id="copyStatus" aria-live="polite" style="min-height:20px;color:var(--site-primary);font-size:13px;margin-top:12px"></p></div><div class="slide-controls"><button class="btn btn-secondary" type="button" data-prev>← Previous slide</button><span class="dots">02 / 02 · JOIN US</span><button class="btn btn-primary" type="button" data-prev>← Back to welcome</button></div></section>
-<footer class="footer"><span>© LavaWater SMP</span><span>Mine, build, explore — see you in-game.</span></footer>
-</div></main>
-<script>
-const slides = [...document.querySelectorAll('.slide')];
-let currentSlide = 0;
-function showSlide(index){currentSlide=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{slide.classList.toggle('active',i===currentSlide);slide.setAttribute('aria-hidden',i===currentSlide?'false':'true');});window.scrollTo({top:0,behavior:'smooth'});}
-document.querySelectorAll('[data-next]').forEach(button=>button.addEventListener('click',()=>showSlide(currentSlide+1)));
-document.querySelectorAll('[data-prev]').forEach(button=>button.addEventListener('click',()=>showSlide(currentSlide-1)));
-document.getElementById('copyIp').addEventListener('click',async()=>{const ip=document.getElementById('serverIp').textContent;const status=document.getElementById('copyStatus');try{await navigator.clipboard.writeText(ip);status.textContent='Server IP copied! See you in-game.';}catch(error){status.textContent='Copy this IP manually: '+ip;}});
-</script>
+  <header>🌿 LAVA<span>WATER</span> SMP</header>
+
+  <main>
+    <p>✦ YOUR NEXT ADVENTURE STARTS HERE ✦</p>
+
+    <h1>BUILD. GRIND.<br><span>SURVIVE.</span></h1>
+
+    <p>Explore the world, build your base, grind for resources
+      and create your own survival story!</p>
+
+    <h2>JOIN THE SERVER</h2>
+
+    <div class="ip" id="serverIP">lavawater.mcsh.io</div>
+
+    <button id="copyButton" type="button">📋 COPY SERVER IP</button>
+    <p id="message" aria-live="polite"></p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>🌲 Survival</h3>
+        <p>Explore and survive your world.</p>
+      </div>
+
+      <div class="feature">
+        <h3>⛏️ Grind</h3>
+        <p>Gather resources and progress.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🏡 Build</h3>
+        <p>Create your own amazing base.</p>
+      </div>
+    </div>
+
+    <p>Owned by ItsLava &amp; BlueOceanWater</p>
+  </main>
+
+  <footer>© LavaWater SMP · Mine. Build. Survive.</footer>
+
+  <script>
+    document.getElementById("copyButton").addEventListener("click", async () => {
+      const ip = document.getElementById("serverIP").textContent;
+      const message = document.getElementById("message");
+
+      try {
+        await navigator.clipboard.writeText(ip);
+        message.textContent = "IP copied! Join us in Minecraft!";
+      } catch {
+        message.textContent = "Copy this IP: " + ip;
+      }
+    });
+  </script>
 </body>
 </html>
