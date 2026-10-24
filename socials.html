@@ -4,322 +4,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08111f">
-  <meta name="description" content="Follow LavaWater SMP on YouTube and join our Minecraft community on Discord.">
+  <meta name="theme-color" content="#182c18">
   <title>LavaWater SMP | Socials</title>
 
   <style>
     :root {
-      --green: #63e6be;
-      --bg: #08111f;
-      --text: #edf6ff;
-      --muted: #a9bacd;
+      --grass: #65b832;
+      --grass-dark: #347b28;
+      --dirt: #79502f;
+      --stone: #626262;
+      --dark: #101810;
+      --panel: #202d20;
+      --white: #f5f5e8;
+      --muted: #c0cbb6;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, Arial, sans-serif;
+      color: var(--white);
+      background-color: #182318;
+      background-image:
+        linear-gradient(45deg, #ffffff05 25%, transparent 25%),
+        linear-gradient(-45deg, #ffffff05 25%, transparent 25%);
+      background-size: 16px 16px;
+      font-family: "Courier New", monospace;
     }
 
-    a { text-decoration: none; }
-
-    a:focus-visible {
-      outline: 3px solid #9af7df;
-      outline-offset: 4px;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
-      width: min(1050px, calc(100% - 32px));
+      width: min(1000px, calc(100% - 28px));
       margin: auto;
     }
 
+    .topbar {
+      background: #182318;
+      border-bottom: 5px solid var(--grass-dark);
+      box-shadow: 0 5px 0 #0006;
+    }
+
     nav {
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
-      padding: 23px 0;
-      border-bottom: 1px solid #ffffff20;
+      gap: 15px;
+      padding: 14px 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      font-weight: 900;
       font-size: 21px;
-      font-weight: 850;
+      text-shadow: 3px 3px #000;
     }
 
-    .logo {
-      display: grid;
-      place-items: center;
+    .grass-block {
       width: 40px;
       height: 40px;
-      border-radius: 13px;
-      background: linear-gradient(140deg, #b3ffe9, #38d7b0);
-      color: #07151a;
+      background:
+        linear-gradient(to bottom, #73c840 0 25%, #518c31 25% 35%, #86552e 35% 100%);
+      border: 3px solid #253c20;
+      box-shadow: inset 3px 3px #ffffff22,
+                  inset -3px -3px #0004,
+                  3px 3px #0008;
+      flex-shrink: 0;
     }
 
-    .nav-links {
+    .navlinks {
       display: flex;
-      gap: 9px;
       flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .nav-links a {
-      color: var(--muted);
-      border: 1px solid #ffffff20;
-      padding: 9px 13px;
-      border-radius: 999px;
+    .navlinks a {
       font-size: 12px;
+      font-weight: 900;
+      padding: 11px 12px;
+      background: #343d34;
+      border: 2px solid #151c15;
+      box-shadow: inset 2px 2px #ffffff24,
+                  inset -2px -2px #0005,
+                  3px 3px #0007;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--green);
-      border-color: var(--green);
+    .navlinks a:hover,
+    .navlinks a.active {
+      background: var(--grass);
+      color: #10200c;
     }
 
     .hero {
       text-align: center;
-      padding: 75px 0 35px;
+      padding: 65px 0 35px;
     }
 
-    .eyebrow {
-      color: var(--green);
+    .label {
+      color: #a6f47b;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 800;
     }
 
     h1 {
-      font-size: clamp(40px, 7vw, 68px);
-      line-height: 1.05;
-      letter-spacing: -3px;
-      margin: 18px 0;
+      font-size: clamp(34px, 7vw, 62px);
+      line-height: 1.15;
+      margin: 20px 0;
+      text-shadow: 4px 4px #000, 7px 7px #0008;
     }
 
-    .gradient {
-      background: linear-gradient(90deg, #f3fbff, #79f3d2, #91b5ff);
-      background-clip: text;
-      color: transparent;
-    }
+    .green { color: #8ee75e; }
 
     .hero p {
-      color: var(--muted);
-      max-width: 600px;
+      max-width: 620px;
       margin: auto;
-      line-height: 1.8;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
     }
 
-    .socials {
+    .divider {
+      height: 12px;
+      margin: 20px 0;
+      border: 3px solid #263d20;
+      background: repeating-linear-gradient(
+        90deg,
+        #65b832 0 20px,
+        #498e2b 20px 40px
+      );
+      box-shadow: 3px 3px #0007;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 35px 0 22px;
+      font-size: 22px;
+      text-shadow: 3px 3px #000;
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin: 30px 0 45px;
+      gap: 22px;
+      margin: 25px 0 45px;
     }
 
     .card {
-      border: 1px solid #ffffff20;
-      border-radius: 22px;
-      padding: 30px;
-      background: linear-gradient(145deg, #13243a, #0c1727);
+      background: var(--panel);
+      border: 4px solid #0d160d;
+      box-shadow: inset 4px 4px #ffffff12,
+                  inset -4px -4px #0005,
+                  6px 6px #0008;
+      padding: 26px;
       text-align: center;
     }
 
-    .icon {
-      width: 76px;
-      height: 76px;
+    .card-top {
+      height: 9px;
+      margin: -26px -26px 24px;
+      background: var(--grass);
+      border-bottom: 3px solid #347b28;
+    }
+
+    .social-icon {
+      width: 80px;
+      height: 80px;
       display: grid;
       place-items: center;
       margin: 0 auto 20px;
-      border-radius: 22px;
-      color: white;
-      font-size: 35px;
+      border: 4px solid #101810;
+      box-shadow: inset 4px 4px #ffffff28,
+                  inset -4px -4px #0005,
+                  4px 4px #0007;
+      font-size: 34px;
       font-weight: 900;
     }
 
-    .youtube { background: #ff2638; }
-    .discord { background: #5865f2; }
+    .youtube-icon { background: #e43b32; }
+    .discord-icon { background: #5865f2; }
 
     h2 {
+      font-size: 23px;
       margin: 12px 0;
-      font-size: 25px;
     }
 
     .card p {
+      min-height: 100px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-      min-height: 75px;
+      font-size: 13px;
+      line-height: 1.9;
     }
 
     .button {
       display: inline-block;
       margin-top: 12px;
-      padding: 14px 20px;
-      border-radius: 12px;
-      background: var(--green);
-      color: #061510;
-      font-weight: 850;
-      font-size: 13px;
-      transition: transform .2s;
+      padding: 14px 17px;
+      background: #65b832;
+      color: #10200c;
+      border: 3px solid #244b19;
+      box-shadow: inset 3px 3px #ffffff40,
+                  inset -3px -3px #0003,
+                  4px 4px #0008;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: transform .12s, filter .12s;
     }
 
-    .button:hover { transform: translateY(-2px); }
-
-    .discord-button {
-      background: #8790ff;
-      color: #080c24;
+    .button:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.15);
     }
 
-    .bottom {
+    .button.discord {
+      background: #8793ff;
+      border-color: #343d91;
+      color: #10132b;
+    }
+
+    .button.youtube {
+      background: #ff6558;
+      border-color: #a62824;
+      color: #260b09;
+    }
+
+    .join-box {
+      background: #283d23;
+      border: 4px solid #111b0e;
+      box-shadow: inset 4px 4px #ffffff13,
+                  6px 6px #0008;
+      padding: 28px 20px;
+      margin-bottom: 40px;
       text-align: center;
-      padding: 30px 15px;
-      border: 1px solid #ffffff18;
-      border-radius: 20px;
-      background: #ffffff06;
-      margin-bottom: 35px;
     }
 
-    .bottom p {
-      color: var(--muted);
-      line-height: 1.8;
+    .server-ip {
+      display: inline-block;
+      background: #101810;
+      border: 3px solid #52664a;
+      padding: 13px;
+      margin: 12px 0;
+      color: #9af36e;
+      font-size: 16px;
+      font-weight: 900;
+      overflow-wrap: anywhere;
     }
 
     footer {
+      border-top: 5px solid var(--grass-dark);
+      background: #101810;
+      padding: 25px 0;
+      color: #b1bea9;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-      padding: 28px 0;
-      border-top: 1px solid #ffffff17;
-      color: #8499b1;
-      font-size: 12px;
+      gap: 10px;
     }
 
     @media (max-width: 650px) {
       nav { flex-direction: column; align-items: flex-start; }
-      .hero { padding: 50px 0 25px; }
-      .socials { grid-template-columns: 1fr; }
-      .card { padding: 25px 18px; }
+      .hero { padding-top: 45px; }
+      .cards { grid-template-columns: 1fr; }
       .card p { min-height: 0; }
-      footer { flex-direction: column; }
+      .brand { font-size: 19px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="topbar">
+    <div class="wrap">
+      <nav>
+        <a href="index.html" class="brand">
+          <span class="grass-block" aria-hidden="true"></span>
+          <span>LAVAWATER SMP</span>
+        </a>
 
-    <nav aria-label="Main navigation">
-      <div class="brand">
-        <div class="logo">◆</div>
-        LavaWater
-      </div>
+        <div class="navlinks">
+          <a href="index.html">HOME</a>
+          <a href="community.html">COMMUNITY</a>
+          <a href="socials.html" class="active">SOCIALS</a>
+        </div>
+      </nav>
+    </div>
+  </div>
 
-      <div class="nav-links">
-        <a href="index.html">HOME</a>
-        <a href="community.html">COMMUNITY</a>
-        <a href="socials.html" class="active">SOCIALS</a>
-      </div>
-    </nav>
-
+  <main class="wrap">
     <header class="hero">
-      <div class="eyebrow">◆ Follow the adventure</div>
+      <div class="label">✦ Minecraft Multiplayer ✦</div>
 
       <h1>
-        Find us <span class="gradient">online.</span>
+        CONNECT WITH<br>
+        <span class="green">LAVAWATER!</span>
       </h1>
 
       <p>
-        Stay connected with LavaWater SMP. Watch our Minecraft
-        content, meet other players and join our community!
+        Follow our adventures beyond the Minecraft world!
+        Watch videos, join our Discord, meet fellow players
+        and become part of the LavaWater SMP community.
       </p>
+
+      <div class="divider"></div>
     </header>
 
-    <main>
-      <section class="socials">
+    <h2 class="section-title">◆ OUR SOCIALS ◆</h2>
 
-        <article class="card">
-          <div class="icon youtube">▶</div>
+    <section class="cards">
+      <article class="card">
+        <div class="card-top"></div>
 
-          <div class="eyebrow">VIDEOS & CONTENT</div>
-          <h2>YouTube</h2>
+        <div class="social-icon youtube-icon" aria-hidden="true">▶</div>
 
-          <p>
-            Watch Minecraft videos, server adventures and
-            more from ItsLava. Subscribe to follow the journey
-            and see what happens next!
-          </p>
-
-          <a
-            class="button"
-            href="https://www.youtube.com/@ItsLava67"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit My YouTube ↗
-          </a>
-        </article>
-
-        <article class="card">
-          <div class="icon discord">D</div>
-
-          <div class="eyebrow">JOIN THE COMMUNITY</div>
-          <h2>Discord</h2>
-
-          <p>
-            Chat with the community, connect with other
-            players and stay updated about LavaWater SMP.
-            Come and join us!
-          </p>
-
-          <a
-            class="button discord-button"
-            href="https://discord.gg/ndTJ2vX34"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join Our Discord ↗
-          </a>
-        </article>
-
-      </section>
-
-      <section class="bottom">
-        <div class="eyebrow">YOUR ADVENTURE STARTS HERE</div>
-
-        <h2>Haven't joined the SMP yet?</h2>
+        <div class="label">VIDEOS & ADVENTURES</div>
+        <h2>YouTube</h2>
 
         <p>
-          Grab your Minecraft client, join LavaWater and start
-          your survival journey!
+          Watch Minecraft content from ItsLava!
+          Check out server adventures, new videos and
+          more. Subscribe and join the journey.
         </p>
 
-        <p>
-          <strong style="color:#63e6be">
-            Server IP: lavawater.mcsh.io
-          </strong>
-        </p>
-
-        <a class="button" href="index.html">
-          Visit Home Page →
+        <a
+          class="button youtube"
+          href="https://www.youtube.com/@ItsLava67"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ▶ SUBSCRIBE
         </a>
-      </section>
-    </main>
+      </article>
 
-    <footer>
-      <span>© 2026 LavaWater SMP</span>
-      <span>Grind. Survive. Build.</span>
-    </footer>
+      <article class="card">
+        <div class="card-top"></div>
 
-  </div>
+        <div class="social-icon discord-icon" aria-hidden="true">D</div>
+
+        <div class="label">CHAT WITH PLAYERS</div>
+        <h2>Discord</h2>
+
+        <p>
+          Join our Discord server to connect with
+          other players, chat with the community
+          and stay up to date with LavaWater.
+        </p>
+
+        <a
+          class="button discord"
+          href="https://discord.gg/ndTJ2vX34"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          JOIN DISCORD
+        </a>
+      </article>
+    </section>
+
+    <section class="join-box">
+      <div class="label">READY, PLAYER?</div>
+
+      <h2>YOUR ADVENTURE AWAITS!</h2>
+
+      <p>Join the SMP and start your survival grind.</p>
+
+      <div>
+        <code class="server-ip" id="serverIP">lavawater.mcsh.io</code>
+      </div>
+
+      <button class="button" id="copyButton" type="button">
+        COPY SERVER IP
+      </button>
+
+      <p id="copyMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 LAVAWATER SMP</span>
+      <span>MINE • BUILD • SURVIVE</span>
+    </div>
+  </footer>
+
+  <script>
+    const copyButton = document.getElementById("copyButton");
+    const serverIP = document.getElementById("serverIP");
+    const copyMessage = document.getElementById("copyMessage");
+
+    copyButton.addEventListener("click", async () => {
+      const ip = serverIP.textContent.trim();
+
+      try {
+        await navigator.clipboard.writeText(ip);
+        copyMessage.textContent = "✓ SERVER IP COPIED!";
+      } catch {
+        copyMessage.textContent = "SERVER IP: " + ip;
+      }
+    });
+  </script>
 </body>
 </html>
