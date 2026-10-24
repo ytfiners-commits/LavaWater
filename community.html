@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Join the LavaWater Minecraft SMP community on Discord.">
+  <title>LavaWater SMP | Community</title>
+
+  <style>
+    :root {
+      --green: #63e6be;
+      --bg: #08111f;
+      --card: #13243a;
+      --text: #edf6ff;
+      --muted: #a9bacd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #9af7df;
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(1050px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 23px 0;
+      border-bottom: 1px solid #ffffff20;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .logo {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      background: linear-gradient(140deg, #b3ffe9, #38d7b0);
+      color: #07151a;
+      font-size: 23px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      border: 1px solid #ffffff20;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 0 40px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin: 18px 0;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #f3fbff, #79f3d2, #91b5ff);
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 610px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #13243a, #0c1727);
+      border: 1px solid #ffffff20;
+      border-radius: 22px;
+      padding: 32px;
+      margin: 22px 0;
+      text-align: center;
+    }
+
+    .discord-icon {
+      width: 75px;
+      height: 75px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border-radius: 22px;
+      background: #5865f2;
+      color: white;
+      font-size: 35px;
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: 27px;
+      margin: 12px 0;
+    }
+
+    .description {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 570px;
+      margin: 0 auto 23px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      background: var(--green);
+      color: #061510;
+      font-weight: 850;
+      font-size: 14px;
+      transition: transform .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      background: #ffffff0a;
+      border: 1px solid #ffffff25;
+      color: var(--text);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .feature {
+      padding: 23px;
+      background: #ffffff08;
+      border: 1px solid #ffffff17;
+      border-radius: 17px;
+    }
+
+    .feature .emoji {
+      font-size: 27px;
+    }
+
+    .feature h3 {
+      margin: 12px 0 8px;
+      font-size: 16px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ip {
+      display: inline-block;
+      padding: 12px 17px;
+      margin: 5px 0 18px;
+      background: #060e19;
+      border: 1px solid #ffffff20;
+      border-radius: 10px;
+      color: #d9e7f8;
+      font-family: monospace;
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 30px 0;
+      margin-top: 25px;
+      border-top: 1px solid #ffffff17;
+      color: #8499b1;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 55px 0 25px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 24px 17px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <nav aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo">◆</div>
+        LavaWater
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="community.html" class="active">COMMUNITY</a>
+        <a href="socials.html">SOCIALS</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">◆ Play together</div>
+
+      <h1>
+        Welcome to our<br>
+        <span class="gradient">Community.</span>
+      </h1>
+
+      <p>
+        LavaWater is more than a Minecraft server.
+        Meet new players, share your adventures, make friends
+        and become part of our survival community!
+      </p>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="discord-icon">D</div>
+
+        <div class="eyebrow">STAY CONNECTED</div>
+
+        <h2>Join our Discord</h2>
+
+        <p class="description">
+          Join the LavaWater Discord to connect with other players,
+          chat with the community and keep up with server news.
+          Come and be part of the adventure!
+        </p>
+
+        <a
+          class="button"
+          href="https://discord.gg/ndTJ2vX34"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join LavaWater Discord ↗
+        </a>
+      </section>
+
+      <section>
+        <div class="eyebrow">OUR COMMUNITY</div>
+        <h2>What awaits you?</h2>
+
+        <div class="features">
+          <article class="feature">
+            <div class="emoji">⛏️</div>
+            <h3>Survival & Grind</h3>
+            <p>
+              Gather resources, build your base, claim your land
+              and work towards your survival goals.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="emoji">🤝</div>
+            <h3>Make Friends</h3>
+            <p>
+              Meet other Minecraft players, team up and
+              enjoy the adventure together.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="emoji">📢</div>
+            <h3>Stay Updated</h3>
+            <p>
+              Follow our community and keep an eye out
+              for server news and future updates.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="eyebrow">READY TO PLAY?</div>
+        <h2>Join LavaWater SMP</h2>
+
+        <p class="description">
+          Your next Minecraft adventure starts here.
+          Copy the server address and join us!
+        </p>
+
+        <div>
+          <code class="ip" id="serverIP">lavawater.mcsh.io</code>
+        </div>
+
+        <button class="button" id="copyButton" type="button">
+          Copy Server IP
+        </button>
+
+        <p id="copyMessage" aria-live="polite"
+           style="color:#63e6be;font-size:13px"></p>
+
+        <a class="button secondary" href="index.html">
+          Back to Home →
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 LavaWater SMP</span>
+      <span>Grind. Survive. Build.</span>
+    </footer>
+
+  </div>
+
+  <script>
+    const copyButton = document.getElementById("copyButton");
+    const serverIP = document.getElementById("serverIP");
+    const copyMessage = document.getElementById("copyMessage");
+
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(serverIP.textContent.trim());
+        copyMessage.textContent = "Server IP copied!";
+      } catch (error) {
+        copyMessage.textContent =
+          "Copy this IP: " + serverIP.textContent.trim();
+      }
+    });
+  </script>
+</body>
+</html>
